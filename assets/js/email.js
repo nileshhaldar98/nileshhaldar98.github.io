@@ -19,7 +19,8 @@ Email.send({
     }]
 })
     .then(function (message) {
-    alert("Mail has been sent successfully To Nilesh Haldar")
+    alert("Mail has been sent successfully To Nilesh Haldar"),
+    document.getElementById("Contact-Form").reset();
     });
 });
 
