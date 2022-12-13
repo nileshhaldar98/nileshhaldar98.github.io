@@ -15,7 +15,6 @@
     --color-light: #f5f5f5;
     --color-black: #0f0f1b;
     --color-dark: #4b4a53;
-
     --container-width-lg: 82%;
     --container-width-md: 90%;
     --container-width-sm: 92%;
@@ -145,6 +144,14 @@ nav button{
     justify-content: space-between;
     align-items: center;
     gap: 4rem;
+}
+#moon-icon{
+   width: 10%;
+   cursor: pointer; 
+}
+.dark-theme {
+    --primary-color:var(--color-white);
+    --secondary-color:var(var(--color-black));
 }
 
 /* ====================== Header ==================== */

@@ -31,6 +31,9 @@
             <li>
                 <a href="./assets/img/Nilesh-Haldar-Resume.pdf" class="btn btn-primary" download><i class="uil uil-download-alt"></i>Resume</a>    
             </li>
+            <li>
+                <img src="/assets/img/moon.png" alt="" id="moon-icon" >
+            </li>
         </ul>
         
         <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
@@ -242,7 +245,7 @@
             <a href="./assets/img/Nilesh-Haldar-Resume.pdf" class="btn" download><i class="uil uil-download-alt"></i>Download Resume</a>
         </div>
 
-        <form action="">
+        <form action="" id="Contact-Form">
             <input type="text" name="name" id="cname" placeholder="Your Name">
             <input type="email" name="email" id="cemail" placeholder="Your Email">
             <textarea name="message" rows="6" id="cmessage" placeholder="Message"></textarea>
@@ -267,3 +270,9 @@
 <script src="https://smtpjs.com/v3/smtp.js">
 </script>
 <script src="./assets/js/email.js"></script>
+<script>
+    var icon = document.getElementById("moon-icon");
+    icon.onclick = function(){
+        document.body.classList.toggle("dark-theme")
+    } 
+</script>
