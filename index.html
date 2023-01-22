@@ -110,10 +110,10 @@
         <div class="container skills__container">
             <h2 class="skills__header">Tools</h2>
             <div class="all__skills">
-                <img src="./assets/img/git-hub-logo.png" alt="java">
-                <img src="./assets/img/vs-code-logo.png" alt="hibernet">
-                <img id="html-logo" src="./assets/img/postman-logp.webp" alt="html">
-                <img src="./assets/img/git-bash-logo.svg" alt="css">
+                <img src="./assets/img/git-hub-logo.png" alt="git-hub">
+                <img src="./assets/img/vs-code-logo.png" alt="vs-code">
+                <img id="html-logo" src="./assets/img/postman-logp.webp" alt="postman">
+                <img src="./assets/img/git-bash-logo.svg" alt="git">
             </div>
 
         </div>
@@ -315,11 +315,11 @@
                     class="btn" download><i class="uil uil-download-alt"></i>Download Resume</a>
             </div>
 
-            <form id="Contact-Form" onsubmit="sendEmail();">
+            <form id="Contact-Form" onsubmit="sendEmail();" method="post">
                 <input type="text" name="name" id="cname" placeholder="Your Name">
                 <input type="email" name="email" id="cemail" placeholder="Your Email">
                 <textarea name="message" rows="6" id="cmessage" placeholder="Message"></textarea>
-                <button type="submit" class="btn" id="csend">Send<i class="uil uil-arrow-right"></i></button>
+                <button type="submit" class="btn" id="csend"value="Send Email" onclick="sendEmail()" >Send<i class="uil uil-arrow-right"></i></button>
             </form>
         </div>
     </section>
@@ -328,32 +328,36 @@
     <!-- ============================== end contact section===================== -->
 
     <script src="./assets/js/main.js"></script>
+    <script src="/assets/js/email.js" ></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        function sendEmail(el) {
-            el.preventDefault();
-            var emailId = document.getElementById("cemail").value;
-            var myMail = 'nileshhaldar98@gmail.com';
-            var messageP = document.getElementById("cmessage").value;
-            Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "nileshhaldar123@gmail.com",
-                Password: "9E7A5228371757A69E2AA601704B1515BE41",
-                To: 'nileshhaldar123@gmail.com',
-                From: emailId,
-                Subject: "Email from portfolio",
-                Body: messageP
-            }).then(
-                message => alert("sent successfully")
-            );
-        }
-    </script>
 </body>
-
 </html>
 <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
 </script>
 <script>
     GitHubCalendar(".calendar", "nileshhaldar98", { responsive: true });
 </script>
+<script>
+    
+function sendEmail() {
+let send = document.getElementById("csend");
+let uname = document.getElementById("cname").value;
+let email = document.getElementById("cemail").value;
+let messages = document.getElementById("cmessage").value;
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: "nileshhaldar123@gmail.com",
+    Password: "zxjdkbxvodhwxkwk",
+    To: 'nileshhaldar98@gmail.com',
+    From:email,
+    Subject: "Email from Portfolio",
+    Body:messages,
+  })
+    .then(function (message) {
+      alert("mail sent successfully")
+    });
+}
+
+
+
 </script>
